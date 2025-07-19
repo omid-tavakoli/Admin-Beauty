@@ -1,0 +1,14 @@
+# dockercompose.yml
+
+# Reference compose file version 3
+version: "3"
+
+Services:
+# service name is react app
+react-app:
+build: .
+#expose 3000 as hosting port and 3000 as container port
+ports:
+- "3000:3000"
+environment:
+# Provide your license key for activation as environment variable to docker container
