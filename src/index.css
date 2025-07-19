@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "peyda-Medium";
+    src: url("/public/fonts/PeydaWebFaNum-Medium.woff2") format("woff2");
+  }
+  html,
+  body {
+    direction: rtl;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    max-height: 100%; 
+    background-color: theme("colors.gray.200");
+  }
+  body {
+    margin: 0;
+  }
+  /* scrollbar style */
+  ::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    width: 0.25rem;
+    background-color: transparent;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: theme("colors.gray.400");
+    border-radius: 1.25rem;
+  }
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@layer components {
+  .custom-border {
+    @apply !rounded-sm !rounded-tl-xl !rounded-br-xl;
+  }
+  .custom-divider-horizontal {
+    @apply relative block w-full h-px bg-gray-card-border;
+  }
+  .custom-divider-vertical {
+    @apply block w-px h-full bg-gray-card-border;
+  }
+  .circle {
+    @apply flex items-center justify-center bg-white rounded-full w-8 h-8 border border-gray-card-border p-[0.375rem];
+  }
+  .button-primary {
+    @apply flex items-center justify-center bg-main-primary text-white py-2 px-4 rounded-lg cursor-pointer text-sm leading-[1.313rem] font-medium whitespace-nowrap outline-none;
+  }
+  .button-primary-outline {
+    @apply flex items-center justify-center border text-center bg-white border-main-primary text-main-primary py-2 px-4 rounded-lg cursor-pointer text-sm leading-[1.313rem] font-medium whitespace-nowrap;
+  }
+  /* Custom Collapse Styles */
+  .collapse.custom-collapse-arrow .custom-collapse-title::before {
+    @apply absolute content-[''] block bg-main-primary opacity-0 h-0 w-[0.375rem] bottom-0 right-0 transition-all duration-[450ms] ease-in-out;
+  }
+  .collapse.custom-collapse-arrow .custom-collapse-title > svg.collapse-arrow {
+    transition: transform ease-in-out 450ms;
+  }
+  .collapse[open] > .custom-collapse-title > svg.collapse-arrow,
+  .collapse-open > .custom-collapse-title > svg.collapse-arrow,
+  .custom-collapse-arrow:focus:not(.collapse-close)
+    > .custom-collapse-title
+    > svg.collapse-arrow,
+  .custom-collapse-arrow:not(.collapse-close)
+    > input[type="checkbox"]:checked
+    ~ .custom-collapse-title
+    > svg.collapse-arrow,
+  .custom-collapse-arrow:not(.collapse-close)
+    > input[type="radio"]:checked
+    ~ .custom-collapse-title
+    > svg.collapse-arrow {
+    transform: rotate(180deg);
+  }
+  .collapse[open] > .custom-collapse-title:before,
+  .collapse-open > .custom-collapse-title:before,
+  .custom-collapse-arrow:focus:not(.collapse-close)
+    > .custom-collapse-title:before,
+  .custom-collapse-arrow:not(.collapse-close)
+    > input[type="checkbox"]:checked
+    ~ .custom-collapse-title:before,
+  .custom-collapse-arrow:not(.collapse-close)
+    > input[type="radio"]:checked
+    ~ .custom-collapse-title::before {
+    height: 100% !important;
+    opacity: 1 !important;
+  }
+  .collapse[open] > .custom-collapse-title,
+  .collapse-open > .custom-collapse-title,
+  .custom-collapse-arrow:focus:not(.collapse-close) > .custom-collapse-title,
+  .custom-collapse-arrow:not(.collapse-close)
+    > input[type="checkbox"]:checked
+    ~ .custom-collapse-title,
+  .custom-collapse-arrow:not(.collapse-close)
+    > input[type="radio"]:checked
+    ~ .custom-collapse-title {
+    @apply bg-gradient-to-l from-main-secondary;
+  }
+
+  .custom-collapse-title,
+  :where(.collapse > input[type="checkbox"]),
+  :where(.collapse > input[type="radio"]) {
+    height: 3.5rem !important;
+  }
+  .radio:checked,
+  .radio[aria-checked="true"] {
+    box-shadow: 0 0 0 3px #fff inset, 0 0 0 3px #fff inset !important;
+  }
+  .center {
+    @apply flex justify-center items-center;
+  }
+
+  /* Tab Style */
+  .tab-items {
+    @apply relative text-sm leading-[1.313rem] font-medium pt-[0.375rem] text-black pb-3 min-w-12 text-center transition-colors duration-[600ms] cursor-pointer after:content-[''] after:block after:w-0 after:h-0.5 after:transition-[width] after:ease-in-out after:duration-[600ms] after:bg-main-primary after:rounded-md after:absolute after:bottom-px after:right-0 after:z-10
+      before:content-[''] before:block before:w-0 before:h-0.5 before:transition-[width] before:ease-in-out before:duration-[600ms] before:bg-main-primary before:rounded-md before:absolute before:bottom-px before:left-0 before:z-10;
+  }
+
+  @media (hover: hover) {
+    .checkbox-secondary:hover {
+      --tw-border-opacity: 1;
+      border-color: theme("colors.gray.checkBox");
+    }
+  }
+  .checkbox-secondary {
+    --chkbg: theme("colors.main.primary");
+    --chkfg: theme("colors.white");
+    --tw-border-opacity: 1;
+    border-color: theme("colors.main.primary");
+  }
+  .checkbox-secondary:checked,
+  .checkbox-secondary[checked="true"],
+  .checkbox-secondary[aria-checked="true"] {
+    --tw-border-opacity: 1;
+    border-color: theme("colors.main.primary");
+    --tw-bg-opacity: 1;
+    background-color: theme("colors.main.primary");
+    --tw-text-opacity: 1;
+    color: var(--fallback-suc, oklch(var(--suc) / var(--tw-text-opacity)));
+  }
+  .checkbox:checked,
+  .checkbox[aria-checked="true"] {
+    background-image: linear-gradient(
+        -45deg,
+        transparent 65%,
+        var(--chkbg) 65.99%
+      ),
+      linear-gradient(45deg, transparent 75%, var(--chkbg) 75.99%),
+      linear-gradient(-45deg, var(--chkbg) 40%, transparent 40.99%),
+      linear-gradient(
+        45deg,
+        var(--chkbg) 32%,
+        var(--chkfg) 30.99%,
+        var(--chkfg) 40%,
+        transparent 40.99%
+      ),
+      linear-gradient(-45deg, var(--chkfg) 50%, var(--chkbg) 49.99%);
+  }
+}
