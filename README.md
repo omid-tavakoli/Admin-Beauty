@@ -1,46 +1,100 @@
-# Getting Started with Create React App
+## 💇‍♀️ Beauty Salon Management Admin Panel
+This is the Admin Panel for a comprehensive Beauty Salon Management System, designed to help salon owners streamline their operations. It provides tools to manage services, staff, appointments, income/expenses, and more.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## 🛠 Built by a team of 15 developers based on a detailed Figma design system.
 
-In the project directory, you can run:
+---
+## 🧩 Sold to multiple salons with the ability to customize the UI based on client branding.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🔥 Key Features
+Define and manage service lines (e.g., haircuts, makeup, skincare)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Add and manage staff and assign them to specific services
 
-### `npm test`
+Configure pricing for each service per staff
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+View reports of earnings and expenses (with charts and filters)
 
-### `npm run build`
+Track customer reservations and manage deposits
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Manage customer and employee profiles
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Admin dashboard with analytics and KPIs
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Multi-role system:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+👤 Normal User Panel
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🧑‍🎤 Staff Panel
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+👑 Salon Owner Panel
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+🌐 Main Public Site
 
-## Learn More
+Custom UI theming per salon (dynamic branding system)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📦 Technologies & Libraries Used
+Framework: React (CRA)
+
+Data Fetching: React Query v5
+
+State Management: React Context + React Query
+
+Validation: Zod
+
+Styling: TailwindCSS + DaisyUI
+
+UI Components: Custom-built + third-party
+
+Calendar: @hassanmojab/react-modern-calendar-datepicker
+
+Charts: Recharts
+
+Routing: React Router v6
+
+---
+
+## 🌐 Admin Panel UI Customization
+This system supports full UI customization per salon:
+
+Custom colors, logos, and themes
+
+Dynamic config for layout and behavior
+
+Branding per domain (multi-tenant support)
+
+---
+
+## 🔒 Authentication & Security
+Token-based authentication (Access & Refresh)
+
+Role-based access control
+
+Protected routes for each panel type
+
+---
+
+## 🚀 Production Ready
+Optimized build with code splitting
+
+Lighthouse-tested performance
+
+Deployed on client-specific domains with branding
+
+---
+
+
+
+
+Geolocation: Leaflet
+
+Date pickers & mobile pickers for various input types
+
